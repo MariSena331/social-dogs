@@ -2,8 +2,10 @@ import styles from "./Input.module.css";
 
 const Input = ({ label, type, name }) => {
   return (
-    <div>
-      <label htmlFor={name}>{label}</label>
+    <div className={styles.wrapper}>
+      <label htmlFor={name} className={styles.label}>
+        {label}
+      </label>
       <input
         id={name}
         name={name}
@@ -11,11 +13,7 @@ const Input = ({ label, type, name }) => {
         className={styles.input}
         onChange={({ target }) => setUsername(target.value)}
       />
-      {/* <input
-        type="text"
-        value={username}
-         */}
-      {/* /> */}
+      <p className={styles.error}>Error</p>
     </div>
   );
 };
