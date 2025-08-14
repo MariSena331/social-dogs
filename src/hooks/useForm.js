@@ -26,8 +26,16 @@ export const useForm = (type) => {
   }
 
   function onChange({ target }) {
+    if (error) validate(target.value);
     setValue(target.value);
   }
 
-  return { value, setValue, onChange, validate: () => validate(value) };
+  return {
+    value,
+    setValue,
+    onChange,
+    error,
+    validate: () => validate(value),
+    onBlur: () => validade(value),
+  };
 };

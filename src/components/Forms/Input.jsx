@@ -1,6 +1,6 @@
 import styles from "./Input.module.css";
 
-const Input = ({ label, type, name, value, onChange }) => {
+const Input = ({ label, type, name, value, onChange, error, onBlur }) => {
   return (
     <div className={styles.wrapper}>
       <label htmlFor={name} className={styles.label}>
@@ -13,8 +13,9 @@ const Input = ({ label, type, name, value, onChange }) => {
         className={styles.input}
         value={value}
         onChange={onChange}
+        onBlur={onBlur}
       />
-      <p className={styles.error}>Error</p>
+      {error && <p className={styles.error}>{error}</p>}
     </div>
   );
 };

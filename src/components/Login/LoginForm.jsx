@@ -6,7 +6,7 @@ import Button from "../Forms/Button";
 import { useForm } from "../../hooks/useForm";
 
 const LoginForm = () => {
-  const username = useForm("email");
+  const username = useForm();
   const password = useForm();
 
   const handleSubmit = (event) => {
